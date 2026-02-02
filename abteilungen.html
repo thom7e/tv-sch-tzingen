@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abteilungen - TV Schützingen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="TV Schützingen Wappen">
+                TV Schützingen <span>1908</span>
+            </a>
+            
+            <div class="burger" onclick="toggleNav()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-overlay" id="mainNav">
+        <ul class="nav-list">
+            <li><a href="index.html">Aktuelles</a></li>
+            <li><a href="abteilungen.html">Abteilungen</a></li>
+            <li><a href="sportberichte.html">Sportberichte</a></li>
+            <li><a href="verein.html">Der Verein</a></li>
+            <li><a href="termine.html">Termine</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <div style="margin-top: 2rem;">
+            <p style="font-weight:bold;">Folge uns:</p>
+            <div class="social-bar" style="justify-content: flex-start;">
+                <a href="https://instagram.com" target="_blank" class="social-icon" style="background:black;"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" class="social-icon" style="background:black;"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content container">
+        
+        <h2>Wochenplan <span class="highlight">Übersicht</span></h2>
+        <p>Alle Trainingszeiten auf einen Blick.</p>
+        
+        <div class="schedule-table-wrapper">
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Tag</th>
+                        <th>Uhrzeit</th>
+                        <th>Gruppe</th>
+                        <th>Info</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Montag</strong></td>
+                        <td>14:30 - 15:30</td>
+                        <td>Vorschulturnen 1</td>
+                        <td>ab 5 Jahre</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>16:00 - 17:00</td>
+                        <td>Vorschulturnen 2</td>
+                        <td>ab 3 Jahre</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>17:30 - 18:30</td>
+                        <td>Leichtathletik I</td>
+                        <td>ab Grundschule</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>18:30 - 20:00</td>
+                        <td>Leichtathletik II</td>
+                        <td>ab weiterf. Schule</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>20:15 - 21:45</td>
+                        <td>Forever-young-Frauen</td>
+                        <td>ab 18 Jahren</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Dienstag</strong></td>
+                        <td>15:30 - 16:30</td>
+                        <td>Eltern-Kind-Turnen</td>
+                        <td>bis 3 Jahre</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>19:00 - 20:00</td>
+                        <td>Dienstagsfrauen</td>
+                        <td>ab 50+</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>20:15 - 22:00</td>
+                        <td>Junioren</td>
+                        <td>ab 18 Jahren</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Mittwoch</strong></td>
+                        <td>17:30 - 18:45</td>
+                        <td>Mädchensportgruppe 1</td>
+                        <td>Grundschule</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>19:00 - 20:00</td>
+                        <td>Mädchensportgruppe 2</td>
+                        <td>ab weiterf. Schule</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>20:00 - 21:40</td>
+                        <td>Fitnessgymnastik</td>
+                        <td>ab 18 Jahren</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Donnerstag</strong></td>
+                        <td>18:00 - 19:00</td>
+                        <td>Jungenfitness</td>
+                        <td>ab Grundschule</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>19:00 - 20:00</td>
+                        <td>Change it!</td>
+                        <td>Power-Workout</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>20:00 - 22:00</td>
+                        <td>Tischtennis (Frei)</td>
+                        <td>TV-Heim</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>20:00 - 22:00</td>
+                        <td>Volleyball</td>
+                        <td>ab 16 Jahren</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Freitag</strong></td>
+                        <td>19:00 - 20:00</td>
+                        <td>LaGYM</td>
+                        <td>ab 16 Jahren</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>20:00 - 22:00</td>
+                        <td>Jedermänner</td>
+                        <td>ab 50+</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <h2>Unsere <span class="highlight">Sportgruppen</span></h2>
+        <div class="grid-system">
+            
+            <div class="dept-card">
+                <h4>Vorschulturnen</h4>
+                <p><strong>Montag 15:00 - 16:00 Uhr</strong><br>Leitung: Sarah Stieß, Lisette Schrodt</p>
+                <p style="font-size:0.9rem;">Für Kinder zwischen 3 und 6 Jahren. Spielerisch fördern wir soziales Verhalten, Gleichgewicht, Kraft und Beweglichkeit. Mit Ball- und Fangspielen sowie Gerätelandschaften können sich die Kinder richtig austoben.</p>
+            </div>
+
+            <div class="dept-card">
+                <h4>Leichtathletik (ab Grundschule)</h4>
+                <p><strong>Montag 17:30 - 18:30 Uhr</strong><br>Leitung: Silke Walz</p>
+                <p style="font-size:0.9rem;">Koordination, Kraft und Ausdauer werden spielerisch verbessert. Schwerpunkt auf Sprint, Weitsprung und Weitwurf. Teamspiele am Ende fördern den Zusammenhalt.</p>
+            </div>
+
+            <div class="dept-card">
+                <h4>Leichtathletik (ab weiterf. Schule)</h4>
+                <p><strong>Montag 18:30 - 20:00 Uhr</strong><br>Leitung: Jakob Class</p>
+                <p style="font-size:0.9rem;">Individuelle Förderung der Technik in Sprint, Weitsprung, Kugelstoßen oder Speerwurf. Ziel sind persönliche Bestleistungen bei Wettkämpfen.</p>
+            </div>
+
+            <div class="dept-card">
+                <h4>Forever-young-Frauen</h4>
+                <p><strong>Montag 20:15 - 21:45 Uhr</strong><br>Leitung: Simone Lutz</p>
+                <p style="font-size:0.9rem;">Für Frauen ab 18. Von Beckenbodentraining über High Intensity bis Nordic Walking. Motto: "Jung fühlen" durch Abwechslung und Lachen.</p>
+            </div>
+
+            <div class="dept-card">
+                <h4>Eltern-Kind-Turnen</h4>
+                <p><strong>Dienstag 15:30 - 16:30 Uhr</strong><br>Leitung: Katrin Kurfiss</p>
+                <p style="font-size:0.9rem;">Ab den ersten Schritten. Parcours zum Klettern, Rutschen und Kriechen mit den Eltern. Sing- und Bewegungsspiele stärken das Miteinander.</p>
+            </div>
+
+            <div class="dept-card">
+                <h4>Dienstagsfrauen</h4>
+                <p><strong>Dienstag 19:00 - 20:00 Uhr</strong><br>Leitung: Olga Fritschle</p>
+                <p style="font-size:0.9rem;">Für Frauen ab 50. Gymnastik mit Bändern, Bällen oder Hanteln, Gedächtnistraining und kleine Tanzeinlagen. Spaß steht an erster Stelle.</p>
+            </div>
+
+            <div class="dept-card">
+                <h4>Junioren</h4>
+                <p><strong>Dienstag 20:15 - 22:00 Uhr</strong><br>Leitung: Bernd Horeschi, Jörg Ebser</p>
+                <p style="font-size:0.9rem;">Männer ab 18. Vielfältiger Sport von Hockey, Volleyball bis Zirkeltraining. Starke Gemeinschaft durch Ausflüge und Feste.</p>
+            </div>
+
+            <div class="dept-card">
+                <h4>Mädchensportgruppe 1</h4>
+                <p><strong>Mittwoch 17:30 - 18:45 Uhr</strong><br>Leitung: Lisa Steinert, Silke Walz</p>
+                <p style="font-size:0.9rem;">6 bis 12 Jahre. Bodenturnen, Ringen, Tanz, Aerobic oder Wasserschlachten. Förderung von Haltung und Gruppengemeinschaft.</p>
+            </div>
+
+            <div class="dept-card">
+                <h4>Mädchensportgruppe 2</h4>
+                <p><strong>Mittwoch 19:00 - 20:00 Uhr</strong><br>Leitung: Silke Walz, Lisa Steinert</p>
+                <p style="font-size:0.9rem;">Teamfähigkeit durch Mannschaftsspiele, Aerobic, Zirkeltraining und Ropeskipping. Gemeinsame Ausflüge wie Inlinern gehören dazu.</p>
+            </div>
+
+            <div class="dept-card">
+                <h4>Fitnessgymnastik</h4>
+                <p><strong>Mittwoch 20:00 - 21:30 Uhr</strong><br>Leitung: Martina Bühler</p>
+                <p style="font-size:0.9rem;">Für Frauen ab 18. Bauch-Beine-Po, Rückenmuskulatur und Entspannung. Geselliges Beisammensein im Anschluss.</p>
+            </div>
+
+            <div class="dept-card">
+                <h4>Jungenfitness</h4>
+                <p><strong>Donnerstag 18:00 - 19:00 Uhr</strong><br>Leitung: Frank Stifter, Thomas Kurfiss, Max Schurlik</p>
+                <p style="font-size:0.9rem;">Ab der 1. Klasse. Körperkräftigung, Parkour und Sportspiele. Fairness und Teamgeist stehen im Fokus.</p>
+            </div>
+
+            <div class="dept-card">
+                <h4>Change it!</h4>
+                <p><strong>Donnerstag 19:00 - 20:00 Uhr</strong><br>Leitung: Silke Walz, Lisa Steinert</p>
+                <p style="font-size:0.9rem;">Power pur! Intervalltraining, CrossFit, Zirkel. Keine Altersgrenze, einfach vorbeikommen und schwitzen.</p>
+            </div>
+
+            <div class="dept-card">
+                <h4>Tischtennis</h4>
+                <p><strong>Donnerstag 20:00 - 22:00 Uhr</strong><br>Leitung: Kurt und Gretel Veit</p>
+                <p style="font-size:0.9rem;">Offener Treff im TV-Heim für alle Tischtennis-Freunde. Keine festen Zeiten, einfach spielen.</p>
+            </div>
+
+            <div class="dept-card">
+                <h4>Volleyball</h4>
+                <p><strong>Donnerstag 20:00 - 22:00 Uhr</strong><br>Leitung: Jörg Ebser</p>
+                <p style="font-size:0.9rem;">Freizeitgruppe ab 16. Techniktraining und freies Spiel. Teilnahme an Freizeitturnieren und Beachvolleyball.</p>
+            </div>
+
+            <div class="dept-card">
+                <h4>LaGYM</h4>
+                <p><strong>Freitag 19:00 - 20:00 Uhr</strong><br>Leitung: Silke Walz</p>
+                <p style="font-size:0.9rem;">Tanz-Fitness ab 15 Jahren. Lateinamerikanische Rhythmen, Aerobic-Schritte, Spaß und gute Laune.</p>
+            </div>
+
+            <div class="dept-card">
+                <h4>Jedermänner</h4>
+                <p><strong>Freitag 20:00 - 22:00 Uhr</strong><br>Leitung: Wolfgang Späth</p>
+                <p style="font-size:0.9rem;">Ab 50+. Gymnastik, Spiel und Spaß zur Erhaltung der Beweglichkeit. Geselligkeit beim Grillen und Wandern.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <strong>TV Schützingen 1908 e.V.</strong><br>
+                <small>&copy; 2026 Alle Rechte vorbehalten.</small>
+                
+                <div class="social-bar">
+                    <a href="#" title="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="E-Mail" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div>
+                <a href="impressum.html">Impressum</a> | <a href="#">Datenschutz</a><br>
+                <small style="opacity: 0.6;">Design: Thom7e</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="news-data.js"></script> 
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportberichte - TV Schützingen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">TV Schützingen <span>1908</span></a>
+            <div class="burger" onclick="toggleNav()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-overlay" id="mainNav">
+        <ul class="nav-list">
+            <li><a href="index.html">Aktuelles</a></li>
+            <li><a href="abteilungen.html">Abteilungen</a></li>
+            <li><a href="sportberichte.html">Sportberichte</a></li>
+            <li><a href="verein.html">Der Verein</a></li>
+            <li><a href="termine.html">Termine</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <div style="margin-top: 2rem;">
+            <p style="font-weight:bold;">Folge uns:</p>
+            <div class="social-bar" style="justify-content: flex-start;">
+                <a href="https://instagram.com" target="_blank" class="social-icon" style="background:black;"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" class="social-icon" style="background:black;"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content container">
+        <h2>Rückblick & <span class="highlight">Sportberichte</span></h2>
+        <p style="margin-bottom: 3rem;">Was wir gemeinsam erlebt haben.</p>
+
+        <article class="report-card">
+            <h3 class="report-title">Mahle-Lauf 2022</h3>
+            <span class="report-meta">21. Mai 2022 | Laufen</span>
+            <p>Bei strahlendem Sonnenschein und fast zu warmen Bedingungen nahmen 10 Läufer aus Schützingen teil...</p>
+            <a href="bericht-detail.html?id=mahle2022" class="btn-outline" style="margin-top:1rem; display:inline-block;">Ganzen Bericht lesen</a>
+        </article>
+
+        <article class="report-card">
+            <h3 class="report-title">B.i.G. Wanderung</h3>
+            <span class="report-meta">12. September | Wandern</span>
+            <p>14 TV-Wanderer genossen das Spätsommerwetter bei Neipperg...</p>
+            <a href="bericht-detail.html?id=bigwanderung" class="btn-outline" style="margin-top:1rem; display:inline-block;">Ganzen Bericht lesen</a>
+        </article>
+
+        <article class="report-card">
+            <h3 class="report-title">Herbstsporttag 2021</h3>
+            <span class="report-meta">26. September 2021 | Leichtathletik</span>
+            <p>95 Kinder und 12 Erwachsene zeigten ihr Können im Dreikampf...</p>
+            <a href="bericht-detail.html?id=herbst2021" class="btn-outline" style="margin-top:1rem; display:inline-block;">Ganzen Bericht lesen</a>
+        </article>
+
+        <article class="report-card">
+            <h3 class="report-title">Kinderweihnachtsfeier 2019</h3>
+            <span class="report-meta">1. Advent 2019 | Jugend</span>
+            <p>Volle Halle und ein grimmiger Grinch (Silke Walz), der am Ende doch Weihnachten liebte...</p>
+            <a href="bericht-detail.html?id=weihnachten2019" class="btn-outline" style="margin-top:1rem; display:inline-block;">Ganzen Bericht lesen</a>
+        </article>
+
+        <article class="report-card">
+            <h3 class="report-title">Zeltlager 2019</h3>
+            <span class="report-meta">19. Juli 2019 | Jugend</span>
+            <p>50 Teilnehmer, Lagerfeuer, Kletterpark und die traditionelle Wasserschlacht...</p>
+            <a href="bericht-detail.html?id=zeltlager2019" class="btn-outline" style="margin-top:1rem; display:inline-block;">Ganzen Bericht lesen</a>
+        </article>
+
+    </main>
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <strong>TV Schützingen 1908 e.V.</strong><br>
+                <small>&copy; 2026 Alle Rechte vorbehalten.</small>
+                
+                <div class="social-bar">
+                    <a href="#" title="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="E-Mail" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div>
+                <a href="impressum.html">Impressum</a> | <a href="#">Datenschutz</a><br>
+                <small style="opacity: 0.6;">Design: Thom7e</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="news-data.js"></script> 
+    <script src="script.js"></script>
+</body>
+</html>

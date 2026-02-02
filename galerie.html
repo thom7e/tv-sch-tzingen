@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie - TV Schützingen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="TV Schützingen Wappen">
+                TV Schützingen <span>1908</span>
+            </a>
+            
+            <div class="burger" onclick="toggleNav()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-overlay" id="mainNav">
+        <ul class="nav-list">
+            <li><a href="index.html">Aktuelles</a></li>
+            <li><a href="abteilungen.html">Abteilungen</a></li>
+            <li><a href="sportberichte.html">Sportberichte</a></li>
+            <li><a href="verein.html">Der Verein</a></li>
+            <li><a href="termine.html">Termine</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <div style="margin-top: 2rem;">
+            <p style="font-weight:bold;">Folge uns:</p>
+            <div class="social-bar" style="justify-content: flex-start;">
+                <a href="https://instagram.com" target="_blank" class="social-icon" style="background:black;"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" class="social-icon" style="background:black;"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content container">
+        <h2>Bildergalerie</h2>
+        <p style="margin-bottom: 2rem;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=400" alt="Bild 1"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400" alt="Bild 2"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400" alt="Bild 3"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1473187983305-f615310e7daa?w=400" alt="Bild 4"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400" alt="Bild 5"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1434648957308-5e6a859697e8?w=400" alt="Bild 6"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=400" alt="Bild 7"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?w=400" alt="Bild 8"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <strong>TV Schützingen 1908 e.V.</strong><br>
+                <small>&copy; 2026</small>
+            </div>
+            <div><a href="#">Impressum</a></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bericht - TV Schützingen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="TV Schützingen Wappen">
+                TV Schützingen <span>1908</span>
+            </a>
+            
+            <div class="burger" onclick="toggleNav()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-overlay" id="mainNav">
+        <ul class="nav-list">
+            <li><a href="index.html">Aktuelles</a></li>
+            <li><a href="abteilungen.html">Abteilungen</a></li>
+            <li><a href="sportberichte.html">Sportberichte</a></li>
+            <li><a href="verein.html">Der Verein</a></li>
+            <li><a href="termine.html">Termine</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <div style="margin-top: 2rem;">
+            <p style="font-weight:bold;">Folge uns:</p>
+            <div class="social-bar" style="justify-content: flex-start;">
+                <a href="https://instagram.com" target="_blank" class="social-icon" style="background:black;"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" class="social-icon" style="background:black;"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content container">
+        <a href="sportberichte.html" style="display:inline-block; margin-bottom: 2rem; color:#666;">← Zurück zur Übersicht</a>
+
+        <article id="report-content">
+            <h1 id="r-title">Lade Bericht...</h1>
+            <span id="r-date" class="meta-tag">Datum</span>
+            
+            <div style="background:#eee; width:100%; height:300px; margin: 2rem 0; display:flex; align-items:center; justify-content:center; color:#999;">
+                (Hier könnte ein Bild zum Bericht stehen)
+            </div>
+
+            <div id="r-text" style="font-size: 1.1rem; line-height: 1.8;">
+                </div>
+        </article>
+
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div><strong>TV Schützingen 1908 e.V.</strong></div>
+            <div><small style="opacity: 0.6;">Creator: Thom7e</small></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Hier sind alle Texte gespeichert
+        const reportsDB = {
+            "mahle2022": {
+                title: "Mahle-Lauf 2022",
+                date: "21. Mai 2022",
+                text: `
+                <p>Am 21.05 fand der Mahle-Lauf bei strahlendem Sonnenschein und fast zu warmen Bedingungen statt. Insgesamt 10 Läufer aus Schützingen nahmen über nahezu alle Streckenlängen teil. Sowohl die persönlichen Ziele als auch Podiumsplätze wurden dabei größtenteils erreicht und sogar übertroffen.</p>
+                <p>Hervorzuheben sind die ersten Plätze von Samira S. und Rosalie S. in ihrer Altersklasse beim 1,4 km langen Schülerlauf.</p>
+                <p>Über die 5 Kilometer Strecke konnte Moritz S. erster in seiner Altersklasse MU14 werden. Dabei setzte er als 12. der Gesamtwertung ein Ausrufezeichen, denn vor ihm kamen ausschließlich deutlich ältere Läufer ins Ziel. Abby und Katrina V. schafften es über 5 km ebenfalls auf das heiß begehrte Podium in ihrer Altersklasse.</p>
+                <p>Der TV Schützingen gratuliert allen Teilnehmer/innen zu den hervorragenden Leistungen und ist über die rege Teilnahme am Lauf begeistert. Wir hoffen, dass wir den Schwung aus dem Mai mit in den September für unseren Herbstsporttag nehmen können.</p>
+                `
+            },
+            "bigwanderung": {
+                title: "B.i.G. Wanderung",
+                date: "12. September",
+                text: `
+                <p>Am 12. September bei wunderschönen Spätsommerwetter trafen sich 14 TV-Wanderer um mal wieder nach der langen Corona-Auszeit eine herrliche Wanderung zu erleben. In Fahrgemeinschaften fuhren wir nach Neipperg zum Wanderparkplatz Dreiklang. Unsere Tour startete bergabwärts durch die bunten Weinberge nach Haberschlacht.</p>
+                <p>Danach dem Klingenweg entlang führte unser Weg steil aufwärts durch den Wald und überquerten dann anschließend die Straße nach Stetten. Mit einer wunderbaren Aussicht über das Zabergäu wurden wir belohnt. Hoch am blauen Horizont sahen wir etliche Gleitschirmflieger, die ihre Runden drehten. Zurück über den Wanderweg Nummer 1 und schmalen Waldwegen erreichten wir unser nächstes Ziel die Weinkanzel bei Neipperg.</p>
+                <p>Bei einem edlen Tröpfchen unterhielten uns die Jagdhornbläser mit zünftiger Musik. Nach kurzer Zeit haben wir unseren Ausgangspunkt wieder erreicht und fuhren gemeinsam zur abschließenden Einkehr „Neuer Berg“ oberhalb von Stetten. Gut gespeist und bestens versorgt traten wir unsere Heimfahrt an. Alle waren mit der ca. 9 km langen Wandertour zufrieden und freuen sich schon auf die Nächste.</p>
+                `
+            },
+            "herbst2021": {
+                title: "Herbstsporttag 2021",
+                date: "26. September 2021",
+                text: `
+                <p>Bei fast perfektem Wettkampfwetter trafen sich am 26.09.2021 zahlreiche Sportbegeisterte auf dem Sportplatz in Schützingen. Trotz der Corona-bedingten Wettkampfpause haben 95 Kinder und zwölf Erwachsene ihr Können beim Weitsprung, Schlagball, Kugelstoßen und Sprint unter Beweis gestellt und dabei einige Bestleistungen erzielt.</p>
+                <p>Viele Vereine aus der Region sind mit ihren Sportlern und Sportlerinnen angereist. Dank des umgesetzten Hygienekonzepts konnte trotz den aktuellen Maßnahmen ein toller Herbstporttag stattfinden. Nach einem anstrengenden Wettkampf war für viele Sportler und Sportlerinnen der traditionelle „Schützinger“ oder eine rote Wurst eine wohlverdiente Belohnung.</p>
+                <p>Der TV-Schützingen hat sich sehr über die vielen Teilnehmer und Teilnehmerinnen gefreut und bedankt sich recht herzlich bei allen Helfern und Helferinnen, die einen reibungslosen und risikofreien Wettkampf ermöglicht haben.</p>
+                `
+            },
+            "weihnachten2019": {
+                title: "Kinderweihnachtsfeier 2019",
+                date: "1. Advent 2019",
+                text: `
+                <p>Am 1. Advent luden die Kinder des TV Schützingen wieder zu der traditionellen Kinderweihnachtsfeier in die Festhalle in Schützingen ein. Schon kurz nach der Saalöffnung um 13:30 Uhr war die Halle fast bis zum letzten Platz mit Kindern und Familien- und Vereinsmitglieder voll besetzt.</p>
+                <p>Pünktlich um 14:30 Uhr wurde die Kinderweihnachtsfeier mit dem Eltern-Kind-Turnen eröffnet. Die Kleinsten zeigten Ihr Können beim Bewegen und Balancieren. Danach begrüßte Bernd Schaßberger die Gäste mit einer kleinen Willkommensrede. Eine besonders herzliche Begrüßung erhielten hierbei die langjährigen Vereinsmitglieder Helmut Oehrle und Isolde Stuber.</p>
+                <p>Die Moderation übernahm in diesem Jahr der sehr grimmig Grinch, gespielt von Silke Walz, der seiner miesen Laune über das Weihnachtsfest freien Lauf lies. Für etwas heitere Stimmung sorgten die Kinder des Vorschulturnens, die als Zwerge verkleidet die Bühne übernahmen. Nach einem Tanz mit Bodenturnelementen der Mädchensportgruppe 1 meckerte der Grinch immer weiter über die heimelige Vorweihnachtszeit.</p>
+                <p>Das Gemotze des Grinchs wurde auch von Auftritt zu Auftritt immer leiser und spätestens bei dem Zuckerstangentanz der Mädchensportgruppe 2 hatte niemand mehr einen Zweifel daran, dass der Grinch das Weihnachtsfest doch gar nicht so schlimm findet. Nach einer kurzen Tanzeinlage verkündete der Grinch: “Weihnachten ist doch gar nicht so doof!”.</p>
+                `
+            },
+            "zeltlager2019": {
+                title: "Zeltlager 2019",
+                date: "19. Juli 2019",
+                text: `
+                <p>Am 19. Juli war es endlich wieder soweit. Am Wochenende trafen sich über 50 Kinder und Erwachsene zum legendären Zeltlager auf dem Sportplatz in Schützingen. Am Freitag um 15 Uhr war Zeltaufbau, danach gab’s Kaffee und Kuchen im TV Heim. Nachdem alle Kinder gut angekommen und alle Zelte aufgebaut waren, haben sich alle gefreut, dass das Lagerfeuer am Zeltlager schon gebrannt hat und bald gegrillt werden konnte.</p>
+                <p>Das Wetter hatte sich in diesem Jahr wieder an die alten Traditionen erinnert. Während andere Kulturkreise Regentänze aufführen, veranstalten die Schützinger bei längerer Trockenheit einfach das Zeltlager. Regen garantiert!</p>
+                <p>Wir freuen uns schon auf das Zeltlager im nächsten Jahr.</p>
+                `
+            }
+        };
+
+        // Logik zum Laden des Inhalts
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+
+        if(id && reportsDB[id]) {
+            document.getElementById('r-title').innerText = reportsDB[id].title;
+            document.getElementById('r-date').innerText = reportsDB[id].date;
+            document.getElementById('r-text').innerHTML = reportsDB[id].text;
+        } else {
+            document.getElementById('r-title').innerText = "Bericht nicht gefunden";
+            document.getElementById('r-text').innerText = "Bitte wähle einen Bericht aus der Übersicht.";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - TV Schützingen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="TV Schützingen Wappen">
+                TV Schützingen <span>1908</span>
+            </a>
+            
+            <div class="burger" onclick="toggleNav()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-overlay" id="mainNav">
+        <ul class="nav-list">
+            <li><a href="index.html">Aktuelles</a></li>
+            <li><a href="abteilungen.html">Abteilungen</a></li>
+            <li><a href="sportberichte.html">Sportberichte</a></li>
+            <li><a href="verein.html">Der Verein</a></li>
+            <li><a href="termine.html">Termine</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <div style="margin-top: 2rem;">
+            <p style="font-weight:bold;">Folge uns:</p>
+            <div class="social-bar" style="justify-content: flex-start;">
+                <a href="https://instagram.com" target="_blank" class="social-icon" style="background:black;"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" class="social-icon" style="background:black;"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content container">
+        
+        <div class="grid-system" style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto;">
+            
+            <div>
+                <h2>Kontakt <span class="highlight">aufnehmen</span></h2>
+                <p>Wir freuen uns auf deine Nachricht oder deinen Besuch im Training.</p>
+                
+                <div style="background: #fafafa; padding: 2rem; border-left: 4px solid var(--c-yellow); margin-top: 2rem;">
+                    <h4 style="margin-top: 0;">Anschrift</h4>
+                    <p>
+                        <strong>TV-Schützingen e.V.</strong><br>
+                        Wehrweg 2<br>
+                        75428 Illingen
+                    </p>
+                    
+                    <h4 style="margin-top: 2rem;">Kommunikation</h4>
+                    <p>
+                        <strong>Telefon:</strong> <a href="tel:015786609527" style="color:var(--c-red);">01578 6609527</a><br>
+                        <strong>E-Mail:</strong> <a href="mailto:kontakt@tv-schuetzingen.de" style="text-decoration:underline;">kontakt@tv-schuetzingen.de</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <strong>TV Schützingen 1908 e.V.</strong><br>
+                <small>&copy; 2026 Alle Rechte vorbehalten.</small>
+                
+                <div class="social-bar">
+                    <a href="#" title="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="E-Mail" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div>
+                <a href="impressum.html">Impressum</a> | <a href="#">Datenschutz</a><br>
+                <small style="opacity: 0.6;">Design: Thom7e</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="news-data.js"></script> 
+    <script src="script.js"></script>
+</body>
+</html>

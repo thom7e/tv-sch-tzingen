@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termine - TV Schützingen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="TV Schützingen Wappen">
+                TV Schützingen <span>1908</span>
+            </a>
+            
+            <div class="burger" onclick="toggleNav()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+    <nav class="nav-overlay" id="mainNav">
+        <ul class="nav-list">
+            <li><a href="index.html">Aktuelles</a></li>
+            <li><a href="abteilungen.html">Abteilungen</a></li>
+            <li><a href="sportberichte.html">Sportberichte</a></li>
+            <li><a href="verein.html">Der Verein</a></li>
+            <li><a href="termine.html">Termine</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <div style="margin-top: 2rem;">
+            <p style="font-weight:bold;">Folge uns:</p>
+            <div class="social-bar" style="justify-content: flex-start;">
+                <a href="https://instagram.com" target="_blank" class="social-icon" style="background:black;"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" class="social-icon" style="background:black;"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content container">
+        <h2>Kommende <span class="highlight">Termine</span></h2>
+        <p style="margin-bottom: 3rem;">Hier findest du alle Veranstaltungen.</p>
+        
+        <div class="event-row">
+            <div class="event-date">
+                <span style="font-size: 1.8rem; display:block;">15</span>
+                <span style="font-size: 0.9rem;">JUL</span>
+            </div>
+            <div class="event-info">
+                <h4>Sommerfest 2026</h4>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+                <small><strong>Ort:</strong> Sportplatz Schützingen | <strong>Zeit:</strong> 14:00 Uhr</small>
+            </div>
+        </div>
+
+        <div class="event-row">
+            <div class="event-date">
+                <span style="font-size: 1.8rem; display:block;">01</span>
+                <span style="font-size: 0.9rem;">AUG</span>
+            </div>
+            <div class="event-info">
+                <h4>Ferienprogramm: Spielstraße</h4>
+                <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+                <small><strong>Ort:</strong> Schulhof | <strong>Zeit:</strong> 10:00 Uhr</small>
+            </div>
+        </div>
+
+        <div class="event-row">
+            <div class="event-date">
+                <span style="font-size: 1.8rem; display:block;">12</span>
+                <span style="font-size: 0.9rem;">SEP</span>
+            </div>
+            <div class="event-info">
+                <h4>Herbstwanderung Stromberg</h4>
+                <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
+                <small><strong>Ort:</strong> Treffpunkt Kelter | <strong>Zeit:</strong> 09:30 Uhr</small>
+            </div>
+        </div>
+        
+        <div class="event-row">
+            <div class="event-date">
+                <span style="font-size: 1.8rem; display:block;">10</span>
+                <span style="font-size: 0.9rem;">DEZ</span>
+            </div>
+            <div class="event-info">
+                <h4>Weihnachtsfeier</h4>
+                <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat.</p>
+                <small><strong>Ort:</strong> Festhalle | <strong>Zeit:</strong> 18:00 Uhr</small>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <strong>TV Schützingen 1908 e.V.</strong><br>
+                <small>&copy; 2026 Alle Rechte vorbehalten.</small>
+                
+                <div class="social-bar">
+                    <a href="#" title="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="E-Mail" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div>
+                <a href="impressum.html">Impressum</a> | <a href="#">Datenschutz</a><br>
+                <small style="opacity: 0.6;">Design: Thom7e</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="news-data.js"></script> 
+    <script src="script.js"></script>
+</body>
+</html>

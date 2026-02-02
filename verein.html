@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Der Verein - TV Schützingen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Spezifische Styles für die Vereinsseite */
+        .person-card {
+            border: 1px solid #eee;
+            padding: 2rem;
+            text-align: center;
+            background: #fff;
+            border-bottom: 4px solid var(--c-yellow); /* Gelber Akzent */
+        }
+        .person-role {
+            font-weight: 900;
+            color: var(--c-red);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .person-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        .club-section {
+            margin-bottom: 5rem;
+        }
+        .download-box {
+            background: var(--c-yellow);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            color: black;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="TV Schützingen Wappen">
+                TV Schützingen <span>1908</span>
+            </a>
+            
+            <div class="burger" onclick="toggleNav()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-overlay" id="mainNav">
+        <ul class="nav-list">
+            <li><a href="index.html">Aktuelles</a></li>
+            <li><a href="abteilungen.html">Abteilungen</a></li>
+            <li><a href="sportberichte.html">Sportberichte</a></li>
+            <li><a href="verein.html">Der Verein</a></li>
+            <li><a href="termine.html">Termine</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <div style="margin-top: 2rem;">
+            <p style="font-weight:bold;">Folge uns:</p>
+            <div class="social-bar" style="justify-content: flex-start;">
+                <a href="https://instagram.com" target="_blank" class="social-icon" style="background:black;"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" class="social-icon" style="background:black;"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content container">
+        
+        <div class="club-section">
+            <h1>Unser <span class="highlight">Verein</span></h1>
+            <p class="lead">Der TV Schützingen ist mehr als nur Sport. Wir sind eine Gemeinschaft.</p>
+        </div>
+
+        <div class="club-section">
+            <h2>Der Vorstand</h2>
+            <div class="grid-system">
+                <div class="person-card">
+                    <span class="person-role">Erster Vorsitzender</span>
+                    <h3 class="person-name">Sigi Nonnenmann</h3>
+                </div>
+                <div class="person-card">
+                    <span class="person-role">Zweiter Vorsitzender</span>
+                    <h3 class="person-name">Peter Pförsich</h3>
+                </div>
+                <div class="person-card">
+                    <span class="person-role">Kassiererin</span>
+                    <h3 class="person-name">Tanja Wenzdorfer</h3>
+                </div>
+                <div class="person-card">
+                    <span class="person-role">Schriftführerin</span>
+                    <h3 class="person-name">Carina Schaßberger</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="club-section">
+            <h2>Der Ausschuss</h2>
+            <p>Unser Ausschuss unterstützt den Vorstand in allen Belangen des Vereinslebens. Dazu gehören Beisitzer, Jugendleitung, Gerätewarte und weitere Funktionen.</p>
+            
+            <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                <li style="background: #fafafa; padding: 15px; border-left: 4px solid #ccc; font-weight: 700;">Maximilian Wiegand</li>
+                <li style="background: #fafafa; padding: 15px; border-left: 4px solid #ccc; font-weight: 700;">Frank Stifter</li>
+                <li style="background: #fafafa; padding: 15px; border-left: 4px solid #ccc; font-weight: 700;">Holger Gittinger</li>
+                <li style="background: #fafafa; padding: 15px; border-left: 4px solid #ccc; font-weight: 700;">Lisa Steinert</li>
+                <li style="background: #fafafa; padding: 15px; border-left: 4px solid #ccc; font-weight: 700;">Martin Kowollik</li>
+                <li style="background: #fafafa; padding: 15px; border-left: 4px solid #ccc; font-weight: 700;">Tanja Zehnder</li>
+            </ul>
+        </div>
+        
+        <div class="club-section">
+            <h2>Unser <span class="highlight">Vereinsheim</span></h2>
+            <div style="background: #f9f9f9; padding: 2rem; border: 1px solid #eee; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                <div style="flex: 1; min-width: 300px;">
+                    <p>Unser TV-Vereinsheim ist der zentrale Treffpunkt in Illingen-Schützingen. Hier finden unsere Sitzungen, aber vor allem das gesellige Leben statt.</p>
+                    <p>Ob Kirwe-Essen, Glühweinfest oder Fasching – hier kommen wir zusammen. Das Gelände hinter der Turn- und Festhalle nutzen wir im Sommer intensiv für Sport- und Familienangebote.</p>
+                    <br>
+                    <strong>Adresse:</strong><br>
+                    Wehrweg 2<br>
+                    75428 Illingen-Schützingen
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=600&auto=format&fit=crop" alt="Vereinsheim Platzhalter" style="width: 100%; border-radius: 4px;">
+                </div>
+            </div>
+        </div>
+
+<div class="club-section" id="mitgliedschaft">
+            <h2>Mitglied werden</h2>
+            <p>Warum lohnt sich eine Mitgliedschaft? Weil du Teil einer tollen Gemeinschaft wirst, von unseren vielfältigen Kursen profitierst und wir gemeinsam unser Dorf bewegen.</p>
+
+            <div class="schedule-table-wrapper" style="margin-top: 2rem;">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Beitragsart</th>
+                            <th>Jahresbeitrag (Beispiel)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kinder & Jugendliche</td>
+                            <td>XX,00 €</td>
+                        </tr>
+                        <tr>
+                            <td>Erwachsene</td>
+                            <td>XX,00 €</td>
+                        </tr>
+                        <tr>
+                            <td>Familienbeitrag</td>
+                            <td>XXX,00 €</td>
+                        </tr>
+                        <tr>
+                            <td>Senioren</td>
+                            <td>XX,00 €</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="download-box">
+                <h3 style="margin: 0 0 1rem 0;">Jetzt anmelden!</h3>
+                <p>Lade dir hier den Aufnahmeantrag herunter, fülle ihn aus und gib ihn bei uns ab.</p>
+                <a href="#" class="btn" style="background: black; color: white;">📄 Beitrittserklärung (PDF)</a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <strong>TV Schützingen 1908 e.V.</strong><br>
+                <small>&copy; 2026 Alle Rechte vorbehalten.</small>
+                
+                <div class="social-bar">
+                    <a href="#" title="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="E-Mail" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div>
+                <a href="impressum.html">Impressum</a> | <a href="#">Datenschutz</a><br>
+                <small style="opacity: 0.6;">Design: Thom7e</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="news-data.js"></script> 
+    <script src="script.js"></script>
+</body>
+</html>
