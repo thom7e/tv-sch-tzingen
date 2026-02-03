@@ -1,6 +1,6 @@
 /* ==========================================================================
    STYLE.CSS - TV SCHÜTZINGEN 1908
-   Version: 3.0 (Fixed Layout & Spacing)
+   Version: 3.1 (Spacing Fix)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -149,28 +149,23 @@ header {
 /* --------------------------------------------------------------------------
    5. LANDINGPAGE (HERO & FEATURES)
    -------------------------------------------------------------------------- */
-/* FIX: Abstandsproblem gelöst (kein min-height 60vh mehr) */
+/* FIX 1: Hero Abstand verkleinert */
 .hero-wrapper {
     display: flex; 
     align-items: center; 
     justify-content: space-between;
     gap: 4rem; 
-    margin-bottom: 2rem; /* Viel kleinerer Abstand nach unten */
+    margin-bottom: 1rem; /* War vorher riesig, jetzt klein zum Pfeil */
     padding-top: 1rem;
     position: relative;
+    min-height: auto; /* Keine erzwungene Höhe mehr */
 }
 
 .hero-text { flex: 1; position: relative; z-index: 1; }
 
-/* Gelber Hintergrund-Blob */
 .hero-text::before {
-    content: "";
-    position: absolute; top: -40px; left: -40px;
-    width: 150px; height: 150px;
-    background: var(--c-yellow);
-    opacity: 0.2; 
-    border-radius: 50%;
-    z-index: -1;
+    content: ""; position: absolute; top: -40px; left: -40px; width: 150px; height: 150px;
+    background: var(--c-yellow); opacity: 0.2; border-radius: 50%; z-index: -1;
 }
 
 .hero-image-container { flex: 1; position: relative; }
@@ -184,14 +179,12 @@ header {
     transition: 0.5s;
 }
 
-.hero-subline {
-    font-size: 1.2rem; margin-bottom: 2rem; color: #444;
-}
+.hero-subline { font-size: 1.2rem; margin-bottom: 2rem; color: #444; }
 
-/* Scroll Arrow (Abstände korrigiert) */
+/* FIX 2: Scroll Pfeil mittig positioniert (Symmetrie) */
 .scroll-down-wrapper {
     width: 100%; display: flex; justify-content: center;
-    margin-bottom: 4rem; /* Abstand zu den Features */
+    padding: 2rem 0 3rem 0; /* Oben 2rem Luft, unten 3rem Luft */
     position: relative; z-index: 10;
 }
 .scroll-link {
@@ -203,11 +196,12 @@ header {
     font-size: 2rem; color: var(--c-red); margin-top: 5px; animation: bounce 2s infinite;
 }
 
-/* FIX: Features nicht mehr überlappend (sauber untereinander) */
+/* FIX 3: Features Abstand sauber */
 .features-section {
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    margin-top: 0;
     margin-bottom: 5rem;
     padding: 0 1rem;
 }
@@ -215,13 +209,11 @@ header {
 .feature-box {
     background: #fff; padding: 2.5rem 2rem; 
     border-radius: 16px;
-    /* Etwas weniger aggressiver Schatten */
     box-shadow: 0 5px 20px rgba(0,0,0,0.08); 
     text-align: center; transition: all 0.3s ease;
     position: relative; overflow: hidden;
-    border: 1px solid #f0f0f0; /* Feine Linie zur Definition */
+    border: 1px solid #f0f0f0; 
 }
-
 .feature-box:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
 
 .feature-icon {
@@ -234,13 +226,40 @@ header {
 /* News Section Wrapper */
 .news-section-wrapper {
     background: var(--c-grey-light); 
-    padding: 5rem 0; margin-bottom: -3rem;
+    padding: 4rem 0 5rem 0; /* Padding oben/unten */
+    margin-bottom: 0; /* Kein Margin nach unten, damit CTA anschließt */
     width: 100vw; position: relative; left: 50%; right: 50%;
     margin-left: -50vw; margin-right: -50vw;
 }
 .news-section-inner {
     max-width: 1100px; margin: 0 auto; padding: 0 1.5rem;
 }
+
+/* --- UPDATE: SPORTLICHER NEWS TICKER --- */
+.news-ticker {
+    width: 100%;
+    background: var(--c-yellow);
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    padding: 1rem 0;
+    margin-bottom: 4rem; 
+    overflow: hidden; 
+    position: relative;
+    transform: skewY(-2deg); 
+    margin-top: -2rem; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.ticker-track {
+    display: flex; white-space: nowrap; 
+    animation: scroll-ticker 20s linear infinite; width: max-content; 
+}
+.ticker-item {
+    font-family: var(--font-head); font-weight: 900; font-size: 3.5rem; 
+    text-transform: uppercase; display: flex; align-items: center; padding-right: 2rem;
+}
+.text-filled { color: black; }
+.text-outline { color: transparent; -webkit-text-stroke: 2px black; text-stroke: 2px black; }
+@keyframes scroll-ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* --------------------------------------------------------------------------
    6. KOMPONENTEN & NEWS FEED
@@ -257,7 +276,6 @@ header {
 .btn-outline { background: transparent; border: 2px solid var(--c-red); color: var(--c-red); }
 .btn-outline:hover { background: var(--c-red); color: white; }
 
-/* FIX: News Karten sauber zentriert, kein Edge-to-Edge Hack */
 .feed-card {
     background: white;
     padding: 2.5rem; 
@@ -269,15 +287,10 @@ header {
 }
 .feed-card:hover { transform: translateY(-5px); }
 
-/* FIX: Bild innerhalb der Karte (zentriert) */
 .feed-img {
-    display: block;
-    width: 100%;       /* Füllt die Breite innerhalb des Paddings */
-    height: 100%;     /* Etwas höher, damit man mehr vom Flyer sieht */
-    object-fit: cover; /* Schneidet sauber zu */
-    object-position: top; /* Fokus auf den oberen Teil (wichtig bei Flyern) */
-    border-radius: 8px; /* Runde Ecken am Bild */
-    margin: 1.5rem 0;   /* Abstand oben/unten */
+    display: block; width: 100%; height: 100%; 
+    object-fit: cover; object-position: top; 
+    border-radius: 8px; margin: 1.5rem 0; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
@@ -292,9 +305,14 @@ header {
 }
 .report-meta { background: transparent; color: #666; padding: 0; }
 
+/* FIX 4: CTA Banner Abstand repariert */
 .cta-banner {
     background: var(--c-yellow); padding: 4rem 0; text-align: center;
-    margin: 4rem 0; border-top: 5px solid black; border-bottom: 5px solid black;
+    /* Hier war der Fehler: */
+    margin-top: 0;      /* Schließt direkt an den grauen Bereich an */
+    margin-bottom: 0;   /* Schließt an den Footer an */
+    
+    border-top: 5px solid black; border-bottom: 5px solid black;
     display: block; 
 }
 .cta-banner h3 { font-size: 2.2rem; margin-bottom: 1rem; color: black; }
@@ -305,7 +323,7 @@ header {
 }
 
 /* --------------------------------------------------------------------------
-   7. ABTEILUNGEN & WOCHENPLAN
+   7. ABTEILUNGEN & TABELLEN
    -------------------------------------------------------------------------- */
 .dept-card {
     border: 1px solid #eee; padding: 2rem; transition: 0.3s;
@@ -319,114 +337,41 @@ header {
 }
 .dept-card p:last-child { margin-top: auto; }
 
-/* === NEUER WOCHENPLAN (Grid statt Tabelle) === */
 .schedule-container {
-    margin-bottom: 4rem;
-    background: #fff;
-    border: 1px solid #eee; /* Rahmen um alles auf Desktop */
+    margin-bottom: 4rem; background: #fff; border: 1px solid #eee; 
 }
-
-/* Kopfzeile (Desktop) */
 .schedule-header {
-    display: flex;
-    background-color: var(--c-yellow);
-    font-family: var(--font-head);
-    font-weight: 700;
-    padding: 12px 15px;
+    display: flex; background-color: var(--c-yellow); font-family: var(--font-head); font-weight: 700; padding: 12px 15px;
 }
-
-/* Spaltenbreiten definieren */
 .col-day { width: 130px; font-weight: 800; font-family: var(--font-head); text-transform: uppercase; color: var(--c-red); }
 .col-time { width: 140px; font-weight: 600; }
 .col-group { width: 280px; font-weight: 700; }
 .col-info { flex: 1; color: #666; font-size: 0.95rem; }
-
-/* Links in der Gruppe */
 .col-group a { border-bottom: 2px solid transparent; }
 .col-group a:hover { border-bottom-color: var(--c-red); color: var(--c-red); }
 
-
-/* Die Tages-Reihen (Desktop) */
-.day-card {
-    display: flex;
-    border-bottom: 1px solid #eee;
-}
+.day-card { display: flex; border-bottom: 1px solid #eee; }
 .day-card:last-child { border-bottom: none; }
-
-.day-label {
-    /* Der Wochentag links */
-    width: 130px;
-    padding: 12px 15px;
-    flex-shrink: 0; /* Darf nicht schrumpfen */
-    border-right: 1px solid #eee; /* Trennlinie zum Inhalt */
-}
-
-.day-content {
-    flex: 1; /* Nimmt den Rest Platz */
-}
-
-.course-row {
-    display: flex; /* Kurse als Zeile */
-    padding: 12px 15px;
-    border-bottom: 1px solid #eee;
-    align-items: center;
-}
+.day-label { width: 130px; padding: 12px 15px; flex-shrink: 0; border-right: 1px solid #eee; }
+.day-content { flex: 1; }
+.course-row { display: flex; padding: 12px 15px; border-bottom: 1px solid #eee; align-items: center; }
 .course-row:last-child { border-bottom: none; }
 
-
-/* === MOBILE ANSICHT (WICHTIG!) === */
-@media (max-width: 768px) {
-    
-    .desktop-only { display: none !important; }
-
-    /* Container resetten */
-    .schedule-container {
-        border: none;
-        background: transparent;
-    }
-
-    /* Der Tag als Karte */
-    .day-card {
-        display: block; /* Kein Flex mehr, sondern Block */
-        background: white;
-        margin-bottom: 1.5rem;
-        border: 1px solid #eee;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        border-left: 5px solid var(--c-yellow); /* Gelber Marker links */
-        overflow: hidden;
-    }
-
-    /* Der Wochentag (Überschrift der Karte) */
-    .day-label {
-        width: 100%;
-        background: var(--c-grey-light);
-        border-right: none;
-        border-bottom: 1px solid #eee;
-        font-size: 1.1rem;
-        letter-spacing: 1px;
-    }
-
-    /* Der Inhalt */
-    .day-content { display: block; }
-
-    /* Einzelner Kurs Mobil */
-    .course-row {
-        flex-wrap: wrap; /* Damit Umbruch möglich ist */
-        padding: 1rem;
-        position: relative; /* Für den Klick-Link-Trick */
-    }
-
-    /* Mobile Spalten-Anpassung */
-    .col-time { width: 100%; margin-bottom: 0.2rem; font-size: 0.9rem; color: #555; }
-    .col-group { width: 100%; font-size: 1.1rem; margin-bottom: 0.3rem; }
-    .col-info { width: 100%; font-size: 0.9rem; font-style: italic; }
-
-    /* Link über ganze Zeile ziehen (UX) */
-    .col-group a::after {
-        content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    }
+/* Termine Seite (Rahmen) */
+.event-row {
+    display: flex; flex-wrap: wrap; background: #ffffff; border: 1px solid #e0e0e0;
+    border-left: 5px solid var(--c-yellow); border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    margin-bottom: 1.5rem; padding: 1.5rem; gap: 2rem; align-items: flex-start; transition: all 0.2s ease;
 }
+.event-row:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-color: var(--c-yellow); }
+.event-date {
+    flex: 0 0 70px; font-family: var(--font-head); font-weight: 800; color: var(--c-red);
+    font-size: 1.1rem; line-height: 1.2; text-transform: uppercase; text-align: center;
+    border-right: 1px solid #f0f0f0; padding-right: 2rem; margin-right: -1rem; 
+}
+.event-info { flex: 1; }
+.event-info h4 { margin-bottom: 0.5rem; }
+.event-info p { margin-bottom: 0.5rem; font-size: 0.95rem; color: #555; }
 
 /* --------------------------------------------------------------------------
    8. FOOTER & EXTRAS
@@ -442,8 +387,8 @@ footer a:hover { color: var(--c-yellow); }
 
 .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
 .reveal.active { opacity: 1; transform: translateY(0); }
-.pulse-btn { animation: pulse 2s infinite ease-in-out; }
-@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+.pulse-btn { animation: pulse 2s infinite; box-shadow: 0 0 0 0 rgba(213, 4, 25, 0.7); }
+@keyframes pulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(213, 4, 25, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(213, 4, 25, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(213, 4, 25, 0); } }
 @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } 60% { transform: translateY(-5px); } }
 
 .social-bar { display: flex; gap: 15px; margin-top: 1rem; }
@@ -477,170 +422,35 @@ footer a:hover { color: var(--c-yellow); }
     h2 { font-size: 1.5rem; }
     .hero-subline { font-size: 1rem; }
     .nav-list a { font-size: 1.5rem; font-weight: 700; }
+    .ticker-item { font-size: 2rem; }
+    .news-ticker { transform: skewY(-2deg); margin-top: 0; }
 
     /* Feed & Karten */
     .feed-card { padding: 1.5rem; }
-    .feed-img { height: 100%; margin: 1rem 0; /* Normales Bild innen */ }
+    .feed-img { height: 100%; margin: 1rem 0; }
 
-    /* Tabelle zu Karten (Clickable) */
-    .schedule-table-wrapper { border: none; margin-bottom: 2rem; }
-    .schedule-table thead { display: none; }
-    .schedule-table tr {
-        display: flex; flex-direction: column; background: white; border: 1px solid #eee;
-        margin-bottom: 1rem; padding: 1.2rem; border-left: 5px solid var(--c-yellow);
-        border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        position: relative; 
-    }
-    .schedule-table tr:active { transform: scale(0.98); background-color: #f9f9f9; }
-    .schedule-table td { display: block; padding: 0.1rem 0; border: none; font-size: 1rem; pointer-events: none; }
-    
-    .schedule-table td:nth-child(1) {
-        font-weight: 800; text-transform: uppercase; color: var(--c-red); font-family: var(--font-head);
-    }
-    .schedule-table td:nth-child(3) { 
-        font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; pointer-events: auto; 
-    }
-    .schedule-table td:nth-child(3) a::after {
-        content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;
-    }
+    /* Wochenplan Mobil */
+    .desktop-only { display: none !important; }
+    .schedule-container { border: none; background: transparent; }
+    .day-card { display: block; background: white; margin-bottom: 1.5rem; border: 1px solid #eee; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-left: 5px solid var(--c-yellow); overflow: hidden; }
+    .day-label { width: 100%; background: var(--c-grey-light); border-right: none; border-bottom: 1px solid #eee; font-size: 1.1rem; letter-spacing: 1px; }
+    .day-content { display: block; }
+    .course-row { flex-wrap: wrap; padding: 1rem; position: relative; }
+    .col-time { width: 100%; margin-bottom: 0.2rem; font-size: 0.9rem; color: #555; }
+    .col-group { width: 100%; font-size: 1.1rem; margin-bottom: 0.3rem; }
+    .col-info { width: 100%; font-size: 0.9rem; font-style: italic; }
+    .col-group a::after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
 
+    /* Komponenten Stack */
     .btn, .btn-outline { width: 100%; display: block; margin-bottom: 10px; }
-
     .footer-inner { flex-direction: column; align-items: flex-start; gap: 2rem; }
     .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-}
 
-/* --------------------------------------------------------------------------
-   TERMINE SEITE (UPDATE: Karten-Look mit Rahmen)
-   -------------------------------------------------------------------------- */
-.event-row {
-    display: flex; 
-    flex-wrap: wrap; 
-    
-    /* HIER IST DER RAHMEN & STYLE: */
-    background: #ffffff;           /* Weißer Hintergrund wirkt edler */
-    border: 1px solid #e0e0e0;     /* Feiner grauer Rahmen rundherum */
-    border-left: 5px solid var(--c-yellow); /* Der gelbe Akzent links bleibt */
-    border-radius: 8px;            /* Abgerundete Ecken */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03); /* Ganz leichter Schatten */
-    
-    margin-bottom: 1.5rem; 
-    padding: 1.5rem;
-    gap: 2rem; 
-    align-items: flex-start;
-    transition: all 0.2s ease;
-}
-
-/* Hover-Effekt: Karte kommt leicht hoch */
-.event-row:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    border-color: var(--c-yellow); /* Rahmen färbt sich gelb */
-}
-
-.event-date {
-    flex: 0 0 70px; 
-    font-family: var(--font-head); 
-    font-weight: 800; 
-    color: var(--c-red);
-    font-size: 1.1rem; 
-    line-height: 1.2; 
-    text-transform: uppercase; 
-    text-align: center;
-    
-    /* Optische Trennlinie rechts neben dem Datum */
-    border-right: 1px solid #f0f0f0;
-    padding-right: 2rem; 
-    margin-right: -1rem; /* Ausgleich für das Gap */
-}
-
-/* Info-Text Bereich */
-.event-info {
-    flex: 1;
-}
-.event-info h4 { margin-bottom: 0.5rem; }
-.event-info p { margin-bottom: 0.5rem; font-size: 0.95rem; color: #555; }
-
-/* --- UPDATE: SPORTLICHER NEWS TICKER --- */
-
-/* Der Container für das Band */
-.news-ticker {
-    width: 100%;
-    background: var(--c-yellow);
-    border-top: 4px solid black;
-    border-bottom: 4px solid black;
-    padding: 1rem 0;
-    margin-bottom: 4rem; /* Abstand zu den Karten */
-    overflow: hidden; /* Versteckt alles was rechts/links rausragt */
-    position: relative;
-    
-    /* Leichte Schrägstellung für mehr Dynamik (optional) */
-    transform: skewY(-2deg); 
-    margin-top: -2rem; /* Zieht es etwas hoch in den grauen Bereich */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* Die Spur, die sich bewegt */
-.ticker-track {
-    display: flex;
-    white-space: nowrap; /* Kein Umbruch! */
-    /* Die Animation: Läuft in 20 Sekunden einmal durch und wiederholt sich endlos */
-    animation: scroll-ticker 20s linear infinite;
-    width: max-content; /* So breit wie der Inhalt */
-}
-
-/* Der Text selbst */
-.ticker-item {
-    font-family: var(--font-head);
-    font-weight: 900;
-    font-size: 3.5rem; /* Schön groß */
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    padding-right: 2rem;
-}
-
-/* Stil 1: Gefüllt (Schwarz) */
-.text-filled {
-    color: black;
-}
-
-/* Stil 2: Outline (Nur Rand, modern!) */
-.text-outline {
-    color: transparent;
-    -webkit-text-stroke: 2px black; /* Schwarzer Rand */
-    text-stroke: 2px black;
-}
-
-/* Die Animation */
-@keyframes scroll-ticker {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Verschiebt um die Hälfte (da Inhalt doppelt ist) */
-}
-
-@media (max-width: 768px) {
-
-    .event-row { 
-        gap: 1rem; 
-        flex-direction: column; 
-        padding: 1.2rem; 
-    }
-    
+    /* Termine Mobil */
+    .event-row { gap: 1rem; flex-direction: column; padding: 1.2rem; }
     .event-date { 
-        flex-direction: row; 
-        gap: 10px; 
-        align-items: baseline; 
-        text-align: left;
-        
-        /* Desktop-Linie (rechts) entfernen */
-        border-right: none; 
-        padding-right: 0;
-        margin-right: 0;
-        
-        /* Mobile-Linie (unten) hinzufügen */
-        border-bottom: 1px solid #eee;
-        padding-bottom: 0.8rem;
-        width: 100%;
-        margin-bottom: 0.5rem;
+        flex-direction: row; gap: 10px; align-items: baseline; text-align: left;
+        border-right: none; padding-right: 0; margin-right: 0;
+        border-bottom: 1px solid #eee; padding-bottom: 0.8rem; width: 100%; margin-bottom: 0.5rem;
     }
 }
