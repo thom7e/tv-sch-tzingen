@@ -92,7 +92,32 @@ strong { font-weight: 700; color: black; }
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
+/* --- FILTER BUTTONS --- */
+.filter-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
 
+.filter-btn {
+    background: transparent;
+    border: 2px solid var(--c-yellow);
+    padding: 0.6rem 1.2rem;
+    font-family: var(--font-head);
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    border-radius: 30px; /* Pillen-Form */
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: var(--c-yellow);
+    color: black;
+}
 /* --------------------------------------------------------------------------
    4. HEADER & NAVIGATION
    -------------------------------------------------------------------------- */

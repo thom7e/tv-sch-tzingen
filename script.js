@@ -79,3 +79,46 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(reveal, 100); 
     }
 });
+
+/* --- FILTER FUNKTION --- */
+function filterSports(category) {
+    // 1. Buttons aktualisieren (Active State)
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => {
+        // Prüfen ob der Button der geklickte ist (anhand des onclick attributs oder text)
+        // Einfacher: Wir setzen alle zurück und färben den geklickten
+        btn.classList.remove('active');
+        if(btn.getAttribute('onclick').includes(category)) {
+            btn.classList.add('active');
+        }
+    });
+
+    // 2. Elemente filtern (Karten unten & Tabellenzeilen oben)
+    const items = document.querySelectorAll('.dept-card, .course-row');
+
+    items.forEach(item => {
+        const itemCat = item.getAttribute('data-category');
+        
+        if (category === 'all' || itemCat.includes(category)) {
+            item.style.display = ''; // Anzeigen (Standard CSS nutzen)
+        } else {
+            item.style.display = 'none'; // Ausblenden
+        }
+    });
+
+    // 3. Leere Tage im Wochenplan ausblenden
+    // Wenn an einem Tag keine Kurse sichtbar sind, soll der ganze Tag-Container weg
+    const days = document.querySelectorAll('.day-card');
+    
+    days.forEach(day => {
+        // Suche sichtbare Kurse in diesem Tag
+        const visibleRows = day.querySelectorAll('.course-row:not([style*="display: none"])');
+        
+        if (visibleRows.length === 0) {
+            day.style.display = 'none';
+        } else {
+            // Reset display style (damit es wieder flex oder block ist je nach CSS)
+            day.style.display = ''; 
+        }
+    });
+}
